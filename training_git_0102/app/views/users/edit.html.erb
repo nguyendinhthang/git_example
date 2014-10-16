@@ -1,0 +1,26 @@
+<% provide(:title, "User Edit") %>
+<h1>Thay doi thong tin nguoi dung</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <p>Ten</p>
+      <%= f.text_field :name, placeholder: "Ten" %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <p>Mat Khau</p>
+      <%= f.password_field :password %>
+
+      <p>Xac nhan mat khau</p>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Cap nhat", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+    <%= gravatar_for @user %>
+    <a href="http://gravatar.com/emails">Thay doi</a>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<% provide(:title, 'Đăng ký') %>
+<h1>Đăng ký</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+     <%= form_for(@user) do |f| %>
+     <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :name, "Họ và tên" %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email, "Thư điện tử" %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password, "Mật khẩu" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Nhập lại mật khẩu" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Tạo tài khoản", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

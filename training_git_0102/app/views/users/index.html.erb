@@ -1,0 +1,8 @@
+<% provide(:title, 'Danh sách tài khoản') %>
+<h1>Danh sách tài khoản</h1>
+<ul class="users">
+  <% @users.each do |user| %>
+    <%= render "users/user", user: user %>
+  <% end %>
+</ul>
+<%= will_paginate %>
